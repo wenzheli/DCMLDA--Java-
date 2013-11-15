@@ -1,9 +1,8 @@
 package ml.topic.utils;
 
 /**
- * Check convergence
- * @author wenzhe
- *
+ * Check convergence of ARRAY or MATRIX. 
+ * Author: Barbieri et al. "Probabilistic topic models for sequence data"
  */
 public class ConvergeUtil {
     

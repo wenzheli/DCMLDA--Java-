@@ -7,7 +7,7 @@ package ml.topic.utils;
  */
 public class DistUtil {
     /**
-     * sample the index based on the distributions.. 
+     * sample the index based on the multinomial distribution. 
      * @return
      */
     public static int sampleFromMultinomial(double[] p){

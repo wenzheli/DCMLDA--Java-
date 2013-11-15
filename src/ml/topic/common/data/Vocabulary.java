@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * Vocabulary class to store all the tokens from the dataset. 
- * @author wenzhe  nadalwz1115@gmail.com
+ * @author wenzhe  
  *
  */
 public class Vocabulary {
