@@ -3,14 +3,14 @@ DCMLDA(Java version)
 
 ## Introduction
 DCMLDA is an probablistic topic model that used for capturing word burstiness, which means if a term is used once
-in a document, then it is likely to be used again. There is classifical topic model like LDA, does not capture burstiness, 
-while DCMLDA is specifically designed for capturing this phenomena. The implementation is based on Java, and should
+in a document, then it is likely to be used again. Most existing topic models like LDA, does not capture word burstiness, 
+and DCMLDA is specifically designed for capturing this phenomena. The implementation is based on Java, and should
 work for any text corpus with very minimal modification (i.e text processing for your own corpus). 
 
 
 ## Then what are differences between LDA and DCMLDA? 
-The figure below shows how two models differ each other. As we can see, the difference is for topic-word distribution \psi. 
-In LDA model, each document draw words from global topic word distribution \psi, but in DCMLDA model, we each document 
+The figure below shows how these two models differ from each other. As we can see, the difference is for topic-word distribution \phi. 
+In LDA model, each document draw words from global topic word distribution \phi, but in DCMLDA model, we each document 
 draw words from document-specific topic-word distributions. 
 
 The interesting thing here is, the prior \beta in DCMLDA plays very similar role as \psi in LDA model.  Thus, we cannot
