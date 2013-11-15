@@ -47,8 +47,10 @@ public class DCMLDAInference {
             }
             // updating alpha and beta..
             System.out.println("updating hyperparameters");
-            model.updateHyperparameters(itr);
-            printTopWords(itr);
+            model.updateHyperparameters(itr+2);
+            printTopWords(itr+2);
+            model.updateParamters();
+            System.out.println("perplexity score is: " + model.getPerplexityScore());
         }
      
     }

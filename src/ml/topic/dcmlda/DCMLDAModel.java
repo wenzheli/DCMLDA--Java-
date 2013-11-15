@@ -181,7 +181,7 @@ public class DCMLDAModel {
         double dividend = 0;
         for (int i = 0; i < D; i++){
             for (int j = 0; j < nWordsInDoc[i]; j++){
-                dividend += 1/(j + alphaSum);
+                dividend += 1.0/(j + alphaSum);
             }
         }
         
@@ -190,7 +190,7 @@ public class DCMLDAModel {
             
             for (int i = 0; i < D; i++){
                 for (int j = 0; j < nDocTopic[i][k]; j++){
-                    divisor += 1/(j + alpha[k]);
+                    divisor += 1.0/(j + alpha[k]);
                 }
             }
             
@@ -223,7 +223,6 @@ public class DCMLDAModel {
         do {
             for (short k = 0; k < K; ++k) {
                 System.arraycopy(beta[k], 0, previousBeta[k], 0, V);
-                System.out.println("update beta" + k);
                 updateBeta0(k, iteration);
             }
             currIteration++;
@@ -286,6 +285,31 @@ public class DCMLDAModel {
             }
         }
         
+    }
+    
+    /**
+     * Calculate the perplexity score for training set. 
+     * @return
+     */
+    public double getPerplexityScore(){
+        double ppx = 0;
+        int size = 0;
+        for (int i = 0; i < D; i++){
+            Document d = dataset.getDocument(i);
+            for (int j = 0; j < d.getNumOfTokens(); j++){
+                int token = d.getToken(j);
+                double prob = 0;
+                for (int k = 0; k < K; k++){
+                    prob += phi[i][k][token] * theta[i][k];
+                }
+                prob = Math.log(prob);
+                if (!Double.isInfinite(prob) && !Double.isNaN(prob)){
+                    ppx += prob;
+                    size++;
+                }
+            }
+        }      
+        return Math.exp(-ppx/size);
     }
     
     public float[][] getTopicDistribution(){
