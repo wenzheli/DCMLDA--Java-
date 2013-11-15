@@ -76,7 +76,7 @@ to explicitly learn these hyperparameters.
 Collapsed gibbs sampler simply samples topic for each word in the document. Basically, it calculate the probability 
 p(z_{j}|z_{-j},W,\alpha,\beta). The gibbs sampler process is slightly different from LDA model. 
 
-### Estimate the hyperparameters using fixed point iteration. 
+### Estimate the hyperparameters. 
 The main challenging part for DCMLDA is to learn hyperparameters, alpha and beta. In general, there are two ways
 to learn these hyperparameters. 
 
@@ -89,7 +89,7 @@ you can check the code written by Dan Klein from UC Berkeley.
 iteration (http://en.wikipedia.org/wiki/Fixed-point_iteration). Actually, the code is using this method. For detailed
 derivaition, refer to the report. 
 
-### Measurement using perplexity score. 
+### Perplexity score. 
 In NLP, perplexity score is one of the important measure for goodness of fit. This simply calculate the maximum likelihood
 for the testing documents. 
 
