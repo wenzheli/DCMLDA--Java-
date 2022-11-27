@@ -65,6 +65,6 @@ public class TextUtil {
             return false;
         }  
         
-        return false;
+        return true;
     }
 }
