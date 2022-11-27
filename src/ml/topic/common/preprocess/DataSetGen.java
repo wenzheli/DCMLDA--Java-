@@ -54,7 +54,7 @@ public class DataSetGen {
                             if (processedToken.equals(""))
                                 continue;
                             // 3. check if any invalid character is contained in the token
-                            if (TextUtil.isValid(processedToken)){
+                            if (!TextUtil.isValid(processedToken)){
                                 continue;
                             }
                             // 4. finally, remove the stop words. 
@@ -124,7 +124,7 @@ public class DataSetGen {
                             if (processedToken.equals(""))
                                 continue;
                             // 3. check if any invalid character is contained in the token
-                            if (TextUtil.isValid(processedToken)){
+                            if (!TextUtil.isValid(processedToken)){
                                 continue;
                             }
                             // 4. finally, remove the stop words. 
